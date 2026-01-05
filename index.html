@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larval Migrans Chatbot</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #1e1e1e;
+            padding: 20px;
+        }
+
+        .sidebar h3 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .sidebar button {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #2d89ef;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sidebar button:hover {
+            background-color: #1b5fa7;
+        }
+
+        .chat-container {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-area {
+            flex: 1;
+            background-color: #1a1a1a;
+            padding: 10px;
+            overflow-y: auto;
+            border-radius: 8px;
+        }
+
+        .user {
+            color: #4CAF50;
+        }
+
+        .bot {
+            color: #2d89ef;
+        }
+
+        .mode-buttons {
+            margin-bottom: 10px;
+        }
+
+        .mode-buttons button {
+            margin-right: 5px;
+            padding: 8px 12px;
+        }
+
+        .input-area {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .input-area button {
+            margin-left: 10px;
+            padding: 10px 20px;
+        }
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebar h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sidebar button {
+        width: 45%;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .chat-container {
+        padding: 10px;
+    }
+
+    .input-area input {
+        font-size: 16px;
+    }
+
+    .input-area button {
+        font-size: 16px;
+    }
+}
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.user, .bot {
+    animation: fadeInUp 0.3s ease;
+}
+
+/* Smooth hover */
+button {
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+body {
+    animation: fadeInUp 0.4s ease;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h3>Lecture Topics</h3>
+        <button onclick="sendTopic('What is CLM')">Definition</button>
+        <button onclick="sendTopic('Mode of transmission of CLM')">Transmission</button>
+        <button onclick="sendTopic('Clinical features of CLM')">Clinical Features</button>
+        <button onclick="sendTopic('Diagnosis of CLM')">Diagnosis</button>
+        <button onclick="sendTopic('Treatment of CLM')">Treatment</button>
+        <button onclick="sendTopic('Prevention of CLM')">Prevention</button>
+    </div>
+
+    <!-- CHAT AREA -->
+    <div class="chat-container">
+        <h2>Larval Migrans Chatbot</h2>
+
+        <div class="mode-buttons">
+            <button onclick="setMode('learning')">Learning Mode</button>
+            <button onclick="setMode('exam')">Exam Mode</button>
+        </div>
+
+        <div class="chat-area" id="chat-area">
+            <p class="bot">🤖 Chatbot ready.</p>
+        </div>
+
+        <form class="input-area" onsubmit="sendMessage(); return false;">
+            <input type="text" id="user-input" placeholder="Type your question..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+</div>
+
+<script>
+function sendMessage() {
+    const input = document.getElementById("user-input");
+    const message = input.value;
+    input.value = "";
+
+    sendToBot(message);
+}
+
+function sendTopic(text) {
+    sendToBot(text);
+}
+
+function sendToBot(message) {
+    const chatArea = document.getElementById("chat-area");
+    chatArea.insertAdjacentHTML("beforeend", `<p class="user">🧑 ${message}</p>`);
+
+    fetch("/chat", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `user_input=${encodeURIComponent(message)}`
+    })
+    .then(response => response.text())
+    .then(data => {
+        chatArea.insertAdjacentHTML("beforeend", `<p class="bot">🤖 ${data}</p>`);
+
+        chatArea.scrollTop = chatArea.scrollHeight;
+    });
+}
+
+function setMode(mode) {
+    const chatArea = document.getElementById("chat-area");
+
+    fetch("/mode", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: `mode=${mode}`
+    })
+    .then(response => response.text())
+    .then(data => {
+        chatArea.innerHTML += `<p class="bot">🤖 ${data}</p>`;
+        chatArea.scrollTop = chatArea.scrollHeight;
+    });
+}
+</script>
+
+</body>
+</html>

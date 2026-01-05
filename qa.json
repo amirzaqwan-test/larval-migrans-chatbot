@@ -1,0 +1,77 @@
+[
+  {
+    "question": ["what is cutaneous larva migrans", "definition clm", "what is clm"],
+    "learning": "Cutaneous Larva Migrans (CLM) is a skin disease caused by the migration of animal hookworm larvae within the epidermis. It presents as itchy, serpiginous (creeping) skin lesions.",
+    "exam": "• Skin disease caused by animal hookworm larvae\n• Larvae migrate in epidermis\n• Causes creeping eruption"
+  },
+  {
+    "question": ["causative agent", "what causes clm", "agent of clm"],
+    "learning": "CLM is caused by larvae of animal hookworms, commonly Ancylostoma braziliense and Ancylostoma caninum, which are parasites of dogs and cats.",
+    "exam": "• Ancylostoma braziliense\n• Ancylostoma caninum\n• Dogs and cats as reservoirs"
+  },
+  {
+    "question": ["mode of transmission", "how is clm transmitted", "transmission"],
+    "learning": "Transmission occurs when infective filariform larvae present in contaminated sand or soil penetrate the human skin, usually through barefoot walking or sitting on beaches.",
+    "exam": "• Skin penetration by larvae\n• Contact with contaminated soil or sand\n• Barefoot exposure"
+  },
+  {
+    "question": ["incubation period", "incubation of clm"],
+    "learning": "The incubation period of CLM ranges from 1 to 6 days after the larvae penetrate the skin.",
+    "exam": "• 1–6 days"
+  },
+  {
+    "question": ["clinical features", "symptoms of clm", "signs of clm"],
+    "learning": "Clinical features include intense itching at the site of penetration, followed by erythematous papules and serpiginous, raised tracks on the skin. Secondary bacterial infection may occur due to scratching.",
+    "exam": "• Intense pruritus\n• Erythematous papules\n• Serpiginous creeping tracks\n• Secondary infection"
+  },
+  {
+    "question": ["common sites", "site of infection", "where clm occurs"],
+    "learning": "Common sites of infection include the feet, buttocks, thighs, and hands, which are areas frequently in contact with contaminated soil or sand.",
+    "exam": "• Feet\n• Buttocks\n• Thighs\n• Hands"
+  },
+  {
+    "question": ["diagnosis", "how to diagnose clm", "diagnosis of clm"],
+    "learning": "Diagnosis of CLM is mainly clinical, based on patient history and the characteristic creeping eruption. Skin biopsy may occasionally identify larvae. Differential diagnoses should be considered.",
+    "exam": "• Clinical diagnosis\n• History of exposure\n• Creeping eruption"
+  },
+  {
+    "question": ["differential diagnosis", "differential of clm"],
+    "learning": "Differential diagnoses include herpes zoster, scabies, migratory myiasis, cercarial dermatitis, and onchocerciasis.",
+    "exam": "• Herpes zoster\n• Scabies\n• Migratory myiasis\n• Cercarial dermatitis"
+  },
+  {
+    "question": ["treatment", "treatment of clm", "how to treat clm"],
+    "learning": "Treatment includes oral albendazole or ivermectin to kill the larvae. Topical or oral antihistamines and corticosteroids help relieve itching. Antibiotics are used if secondary bacterial infection occurs.",
+    "exam": "• Albendazole / ivermectin\n• Antihistamine\n• Corticosteroid\n• Antibiotics (secondary infection)"
+  },
+  {
+    "question": ["prognosis", "outcome of clm"],
+    "learning": "CLM is a self-limiting and benign condition. Most cases resolve within 4 to 8 weeks even without treatment, although therapy accelerates recovery.",
+    "exam": "• Self-limiting\n• Benign condition\n• Resolves in 4–8 weeks"
+  },
+  {
+    "question": ["prevention", "prevention of clm", "how to prevent clm"],
+    "learning": "Prevention includes regular deworming of pets, controlling stray dogs and cats, avoiding walking barefoot on beaches, and maintaining proper hygiene.",
+    "exam": "• Deworm pets\n• Control stray animals\n• Avoid barefoot exposure\n• Hygiene"
+  },
+  {
+    "question": ["what is toxocariasis", "human toxocariasis"],
+    "learning": "Human toxocariasis is a zoonotic infection caused by Toxocara canis or Toxocara cati. Humans are accidental hosts, and larvae migrate to various organs causing inflammatory responses.",
+    "exam": "• Zoonotic infection\n• Caused by Toxocara canis / cati\n• Humans are accidental hosts"
+  },
+  {
+    "question": ["visceral larva migrans", "vlm"],
+    "learning": "Visceral Larva Migrans occurs when Toxocara larvae migrate to organs such as the liver and lungs, causing symptoms like fever, cough, hepatosplenomegaly, and eosinophilia.",
+    "exam": "• Larvae migrate to organs\n• Liver and lungs involved\n• Eosinophilia"
+  },
+  {
+    "question": ["ocular larva migrans", "olm"],
+    "learning": "Ocular Larva Migrans results from larval migration to the eye, leading to visual impairment, retinal granuloma, or even blindness, usually affecting one eye.",
+    "exam": "• Eye involvement\n• Retinal granuloma\n• Visual impairment / blindness"
+  },
+  {
+    "question": ["neurotoxocariasis", "nt"],
+    "learning": "Neurotoxocariasis is a rare condition where larvae migrate to the central nervous system, causing meningitis, encephalitis, or neurological symptoms.",
+    "exam": "• CNS involvement\n• Meningitis or encephalitis\n• Neurological symptoms"
+  }
+]
